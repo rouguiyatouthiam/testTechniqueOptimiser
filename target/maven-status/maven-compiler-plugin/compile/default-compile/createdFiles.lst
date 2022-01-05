@@ -1,0 +1,5 @@
+com\test\technique\selenium\page\Test_exercice_1.class
+com\test\technique\selenium\testCase\ExerciceTestCase.class
+com\test\technique\selenium\page\Test_exercice_2.class
+com\test\technique\selenium\utils\BrowserControl.class
+com\test\technique\selenium\utils\GetPropertyValues.class

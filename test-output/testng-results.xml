@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-01-05T23:06:05Z" name="Suite" finished-at="2022-01-05T23:07:47Z" duration-ms="102230">
+    <groups>
+    </groups>
+    <test started-at="2022-01-05T23:06:05Z" name="Test" finished-at="2022-01-05T23:07:47Z" duration-ms="102230">
+      <class name="com.test.technique.selenium.testCase.ExerciceTestCase">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.test.technique.selenium.testCase.ExerciceTestCase@6d07a63d]" started-at="2022-01-05T23:06:05Z" name="setup" finished-at="2022-01-05T23:06:35Z" duration-ms="29901" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="accueil()[pri:0, instance:com.test.technique.selenium.testCase.ExerciceTestCase@6d07a63d]" started-at="2022-01-05T23:06:35Z" name="accueil" description="Ce test permet de verifier si on est à la page d&#039;acueil" finished-at="2022-01-05T23:06:40Z" duration-ms="4870" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accueil -->
+        <test-method signature="exercice_1(java.lang.String)[pri:0, instance:com.test.technique.selenium.testCase.ExerciceTestCase@6d07a63d]" started-at="2022-01-05T23:06:40Z" name="exercice_1" description="Ce test traite l&#039;exercice 1" finished-at="2022-01-05T23:07:29Z" depends-on-methods="com.test.technique.selenium.testCase.ExerciceTestCase.accueil" duration-ms="48878" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ROUGE ALLURE]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exercice_1 -->
+        <test-method signature="exercice_2(java.lang.String, java.lang.String)[pri:0, instance:com.test.technique.selenium.testCase.ExerciceTestCase@6d07a63d]" started-at="2022-01-05T23:07:29Z" name="exercice_2" description="Ce test traite l&#039;exercie 2" finished-at="2022-01-05T23:07:47Z" depends-on-methods="com.test.technique.selenium.testCase.ExerciceTestCase.accueil" duration-ms="18081" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ROUGE ALLURE]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exercice_2 -->
+        <test-method is-config="true" signature="browserClose()[pri:0, instance:com.test.technique.selenium.testCase.ExerciceTestCase@6d07a63d]" started-at="2022-01-05T23:07:47Z" name="browserClose" finished-at="2022-01-05T23:07:47Z" duration-ms="466" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserClose -->
+      </class> <!-- com.test.technique.selenium.testCase.ExerciceTestCase -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

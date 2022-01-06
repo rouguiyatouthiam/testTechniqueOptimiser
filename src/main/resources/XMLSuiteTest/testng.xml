@@ -5,7 +5,7 @@
 	<parameter name="motRcherche"    value="ROUGE ALLURE" />
 	<parameter name="nomProduit"    value="ROUGE ALLURE" />
 	<parameter name="quantite"    value="1"  />
-  <test thread-count="5" name="Test">
+  <test  name="Test">
     <classes>
       <class name="com.test.technique.selenium.testCase.ExerciceTestCase"/>
     </classes>

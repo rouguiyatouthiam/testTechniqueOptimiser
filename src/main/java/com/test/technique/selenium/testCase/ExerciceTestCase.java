@@ -57,19 +57,20 @@ public class ExerciceTestCase {
 		System.out.println("*******DEBUT EXERCICE 1************");
 		
 	    test_exercice_1.clickAccepterCookies();
-	    System.out.println("Accepter cookies ok");
+	    System.out.println("Accept cookies ok");
 		test_exercice_1.clickBarreRecherche();
-		System.out.println("cliquer icone rechercher depuis menu en haut ok");
+		System.out.println("cliquer icone rechercher depuis menu en haut homepage ok");
 		test_exercice_1.setMotRechercher(motRechercher);
 		System.out.println("Saisit du mot à rechercher " + motRechercher +  " ok");
 		test_exercice_1.clickBoutonRecherche();
 		System.out.println("clique sur l'icone  rechercher ok");
 		bc.waitSomeTime(2000);
 		test_exercice_1.btnCloseSearchPage();
-		System.out.println("clique sur l'icone  close recherche et retour à la page d'accueil ok");
+		System.out.println("clique sur  closeSearch et retour à la page d'accueil ok");
+		bc.waitSomeTime(8000);
 		test_exercice_1.clickBarreRechercheBis();
-		System.out.println("clique sur l'icone  rechercher depuis menu en haut ok");
-		bc.waitSomeTime(20000);
+		System.out.println("clique sur l'icone  rechercher depuis menu en haut HomePage ok");
+		// bc.waitSomeTime(20000);
 		//System.out.println(test_exercice_1.getReccentSearch());
 		Assert.assertEquals(test_exercice_1.getReccentSearch(),motRechercher);
 		System.out.println("la rescente recherche affichée " + test_exercice_1.getReccentSearch() + " correspond au notre dernière recherche "  + motRechercher);
@@ -102,32 +103,27 @@ public class ExerciceTestCase {
 	  {
 	  test_exercice_2 = new Test_exercice_2(this.bc); 
 	  System.out.println("*******DEBUT EXERCICE 2************");
-	  
 	  test_exercice_2. clickbtnMenuMakup();  
+	  System.out.println("clic sur Menu Makup ok");
 	  test_exercice_2. clickbtnMenuMakupLipstick(); 
+	  System.out.println("clic sur sous menu Lipstick ok");
 	  bc.waitSomeTime(3000);
-	  //scroller vers le ba  pour voir les produits
-		/*
-		 * JavascriptExecutor Js1 = (JavascriptExecutor) this.bc.getDriver();
-		 * Js1.executeScript("window.scrollBy(250,0)");
-		 */
-	  
 	  test_exercice_2.clickAddPanier(nomProduit);
-	  
+	  System.out.println("clic add to bag  "+ nomProduit +" ok");
 	  test_exercice_2. clickAjouterAuPanier();
+	  System.out.println("clic add to bag  depuis popup ok");
 	  bc.implicitTimetWait(30);
-	//  bc.waitSomeTime(10000);
+	  //bc.waitSomeTime(10000);
 	  test_exercice_2. clickbtnbtnAfficherPanier(); 
-	//scroll
-	JavascriptExecutor jse =(JavascriptExecutor) bc.getDriver();
-	jse.executeScript("window.scrollBy(0,250)");
-	  
+	  System.out.println("clic boutton review bag and checkout depuis popup et affichage Panier ok");
+	 // scroll vers le bas
+	  JavascriptExecutor jse =(JavascriptExecutor) bc.getDriver();
+	  jse.executeScript("window.scrollBy(0,250)");
+	  bc.waitSomeTime(2000);
 	  Assert.assertEquals(test_exercice_2. getProduitName(),nomProduit);
 	  System.out.println("le produit affiché dans le panier est" +nomProduit);
 	  Assert.assertEquals(test_exercice_2.getQuantitetProduiPanier(),quantite);
-	  System.out.println("quantité produit =1");
-	  
-	  
+	  System.out.println("quantité produit = 1");
 	  Assert.assertEquals(test_exercice_2.getPrixUnitaireProduiPanier(),
 	  test_exercice_2.getTotalPanier());
 	  System.out.println("prix unitaire et prix total  conformes");

@@ -188,7 +188,7 @@ public class Test_exercice_1
 			 	public String getReccentSearch()
 				{
 
-					
+			 		
 					  Actions builder = new Actions(bc.getDriver());
 					  builder.moveToElement(lRecentSearch);
 					  builder.perform();

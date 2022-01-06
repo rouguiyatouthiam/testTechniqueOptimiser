@@ -76,7 +76,7 @@ public class Test_exercice_2
 		 	public void clickbtnMenuMakup()
 		 	{
 		 		
-		 		bc.explicitTimet(10, btn_MenuMakup);
+		 		bc.explicitTimet(30, btn_MenuMakup);
 		 		this.btn_MenuMakup.click();
 		 	}
 		 	
@@ -125,7 +125,7 @@ public class Test_exercice_2
 			 */
 		 	public void clickbtnbtnAfficherPanier()
 		 	{
-		 		bc.explicitTimet(10, btn_AfficherPanier);
+		 		bc.explicitTimet(30, btn_AfficherPanier);
 		 		this.btn_AfficherPanier.click();
 		 	}
 		 	

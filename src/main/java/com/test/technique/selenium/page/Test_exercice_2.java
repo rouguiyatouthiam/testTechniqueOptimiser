@@ -76,7 +76,7 @@ public class Test_exercice_2
 		 	public void clickbtnMenuMakup()
 		 	{
 		 		
-		 		bc.explicitTimet(30, btn_MenuMakup);
+		 		bc.explicitTimet(60, btn_MenuMakup);
 		 		this.btn_MenuMakup.click();
 		 	}
 		 	

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -145,7 +146,47 @@ public class BrowserControl {
 		}
 		
 
+		/**
+		 * Cette méthode permet de récupérer un lien visible dans une page de l'application à partir de son xpath.
+		 * @param xpath_name
+		 * @return
+		 */
+		public WebElement getElementByXPath(String xpath_name)
+		{
+			WebElement element = null;
+			try 
+			{
+				element=this.driver.findElement(By.xpath(xpath_name));
+			}
+			catch(Exception e)
+			{
+				System.out.println("xpath name not found");
+			}
 			
+			return element;
+		}
+	
+		
+		
+		/**
+		 * Cette méthode permet de récupérer un élément visible dans une page de l'application à partir de son attribut id.
+		 * @param id_name
+		 * @return
+		 */
+		public WebElement getElementByID(String id_name)
+		{
+			WebElement element = null;
+			try {
+				element=this.driver.findElement(By.id(id_name));
+			}
+			catch(NoSuchElementException e)
+			{
+				System.out.println("id not found");
+			}
+			
+			return element;
+		}
+		
 	
 	/**
 	 * Cette méthode permet de faire une pause de X millisecondes.

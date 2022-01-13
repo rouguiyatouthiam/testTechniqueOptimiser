@@ -37,7 +37,7 @@ public class ExerciceTestCase {
 		globalTime.start();
 		bc = new BrowserControl(navigateur);;
 		bc.launchURL(bc.getUrl());
-		bc.implicitTimetWait(10);
+		bc.implicitTimetWait(30);
 	}
 	
 	
@@ -61,20 +61,19 @@ public class ExerciceTestCase {
 		test_exercice_1.clickBarreRecherche();
 		System.out.println("cliquer icone rechercher depuis menu en haut homepage ok");
 		test_exercice_1.setMotRechercher(motRechercher);
-		System.out.println("Saisit du mot à rechercher " + motRechercher +  " ok");
-		test_exercice_1.clickBoutonRecherche();
-		System.out.println("clique sur l'icone  rechercher ok");
 		bc.waitSomeTime(2000);
-		test_exercice_1.btnCloseSearchPage();
-		System.out.println("clique sur  closeSearch et retour à la page d'accueil ok");
-		bc.waitSomeTime(8000);
+		test_exercice_1.clickBoutonRecherche();
+		/*Assert.assertEquals( test_exercice_1.isBtnClose(), true);
+		test_exercice_1.clickBtnCloseSearchPage();
+		bc.waitSomeTime(2000);
 		test_exercice_1.clickBarreRechercheBis();
-		System.out.println("clique sur l'icone  rechercher depuis menu en haut HomePage ok");
-		// bc.waitSomeTime(20000);
-		//System.out.println(test_exercice_1.getReccentSearch());
+		bc.waitSomeTime(5000);
+		Assert.assertEquals( test_exercice_1.isZoneRecherche(),true);
+		Assert.assertEquals( test_exercice_1.isRecentSearch(),true);
 		Assert.assertEquals(test_exercice_1.getReccentSearch(),motRechercher);
 		System.out.println("la rescente recherche affichée " + test_exercice_1.getReccentSearch() + " correspond au notre dernière recherche "  + motRechercher);
-		test_exercice_1.clickReccentSearch();
+		test_exercice_1.clickReccentSearch();*/
+		
 		System.out.println("clique sur l'icone  rechercher ok");
 		
 		  for (String produit :test_exercice_1.getlistResultat()) {
@@ -83,37 +82,36 @@ public class ExerciceTestCase {
 		  
 		  System.out.println("le produit "  +produit + " contient " + motRechercher); }
 		  
-		  bc.waitSomeTime(3000);
+		  bc.waitSomeTime(5000);
 		  
 		  NomProduit2DeLaListe =test_exercice_1.getProdui2tNameListProduct();
 		  test_exercice_1.clickProduitDeuxListe();
+		  bc.waitSomeTime(5000);
 		  System.out.println("clique sur le produit 2 de la liste des produits affichés ok");
 		  NomProduitPageProduit=test_exercice_1.getProdui2tNamepageProduct();
 		  Assert.assertEquals(NomProduitPageProduit,NomProduit2DeLaListe);
 		  System.out.println("nom produit page produit = nom produit de la  liste produit ");
-		 
 		  System.out.println("*******FIN EXERCICE 1************");
 	}
 	
 	
 	
 	  @Parameters({"quantite","nomProduit"})
-	  @Test(description = "Ce test traite l'exercie 2", dependsOnMethods =  "accueil") 
+	  @Test(description = "Ce test traite l'exercie 2", dependsOnMethods = "exercice_1") 
 	  public void exercice_2(String quantite,String nomProduit) 
 	  {
 	  test_exercice_2 = new Test_exercice_2(this.bc); 
 	  System.out.println("*******DEBUT EXERCICE 2************");
 	  test_exercice_2. clickbtnMenuMakup();  
 	  System.out.println("clic sur Menu Makup ok");
+	  bc.waitSomeTime(3000);
 	  test_exercice_2. clickbtnMenuMakupLipstick(); 
 	  System.out.println("clic sur sous menu Lipstick ok");
-	  bc.waitSomeTime(3000);
 	  test_exercice_2.clickAddPanier(nomProduit);
 	  System.out.println("clic add to bag  "+ nomProduit +" ok");
 	  test_exercice_2. clickAjouterAuPanier();
 	  System.out.println("clic add to bag  depuis popup ok");
-	  bc.implicitTimetWait(30);
-	  //bc.waitSomeTime(10000);
+	  bc.waitSomeTime(10000);
 	  test_exercice_2. clickbtnbtnAfficherPanier(); 
 	  System.out.println("clic boutton review bag and checkout depuis popup et affichage Panier ok");
 	 // scroll vers le bas

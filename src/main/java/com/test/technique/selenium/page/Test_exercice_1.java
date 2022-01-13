@@ -27,10 +27,17 @@ public class Test_exercice_1
 	   
 	
 	   @FindBy(xpath="//button[@data-test='btnSearch_Header_Disabled']")
-		private WebElement  barre_de_recherche;
+	   private WebElement  barre_de_recherche;
+	   public String strBarreDeRecherche="//button[@data-test='btnSearch_Header_Disabled']";
+	   public boolean isstrBarreDeRecherche ;
+	   
 	   
 	   @FindBy(id="searchInput")
 	   private WebElement  zone_recherche;
+	   public String strZoneRecherche="searchInput";
+	   public boolean isZoneRecherche ;
+	   
+	   
 	   
 	   @FindBy(xpath="//button[@data-test='btnSubmitSearch']")
 	   private WebElement  btn_rechercher;
@@ -51,15 +58,18 @@ public class Test_exercice_1
 		private WebElement  Product2NamePageProduct;
 	    
 	    
-	    @FindBy(xpath="//button[@data-test='btnCloseSerach']")
+	    @FindBy(xpath="//*[@data-test='btnCloseSerach']/span")
 	  	private WebElement  btnClose;
+	    public String strClose="//*[@data-test='btnCloseSerach']/span";
+	    public boolean isBtnClose ;
 	    
 	    @FindBy(xpath = "//button[@data-test='lblRecentSearchData']")
 	  	private WebElement  lRecentSearch;
-	    String strLRecentSearch="//button[@data-test='lblRecentSearchData']";
+	    String strRecentSearch="//button[@data-test='lblRecentSearchData']";
+	    public boolean isRecentSearch ;
 	    
-	    
-	 
+	    public String strLogoHP="//img[@data-test='lnkLogo']";
+	    public boolean isLogoHP ;
 	    
 	    /**
 		 * Constructeur: Initialisation des éléments
@@ -170,10 +180,10 @@ public class Test_exercice_1
 				 */
 			 	
 			 	
-			 	public void btnCloseSearchPage()
+			 	public void clickBtnCloseSearchPage()
 			 	{
-					
-			 		this.bc.clickAction(btnClose);
+			 		   bc.clickAction(btnClose);;
+			 		   //this.bc.clickAction(btnClose);
 
 			 	
 			 	}
@@ -188,11 +198,12 @@ public class Test_exercice_1
 			 	public String getReccentSearch()
 				{
 
-			 		
-					  Actions builder = new Actions(bc.getDriver());
+			 			
+					/*  Actions builder = new Actions(bc.getDriver());
 					  builder.moveToElement(lRecentSearch);
-					  builder.perform();
+					  builder.perform();*/
 					  
+					  bc.explicitTimet(60, lRecentSearch);
 					  return this.lRecentSearch.getText().toUpperCase();
 					 
 					 
@@ -222,6 +233,146 @@ public class Test_exercice_1
 
 			 		 this.lRecentSearch.click();
 			 	
-			 		}
+			 	}
+			 	
+			 	
+			 	/**
+				 * Cette fonction me permet de verifier si le bouton close est visible
+				 *
+				 */
+			 	
+			 	public boolean isBtnClose()
+			    {
+			 		isBtnClose=false;
+					WebElement close = bc.getElementByXPath(strClose);
+						
+						
+						if(null != close)
+						{
+							isBtnClose=true;
+							
+							System.out.println("le bouton close est visble");
+						}
+						else
+						{
+							System.out.println(" bouton close n'est pas visible ");
+						}
+						
+					
+					return isBtnClose;
+				}
+		
+			 	
+			 	/**
+				 * Cette fonction me permet de verifier si le bouton close est visible
+				 *
+				 */
+			 	
+			 	public boolean isLogoHP()
+			    {
+			 		isLogoHP=false;
+					WebElement logoHP = bc.getElementByXPath(strLogoHP);
+						
+						
+						if(null != logoHP)
+						{
+							isLogoHP=true;
+							
+							System.out.println("retour HP OK");
+						}
+						else
+						{
+							System.out.println(" retour HP KO ");
+						}
+						
+					
+					return isLogoHP;
+				}
+		
+			 	
+			 	
+			 	
+			 	/**
+				 * Cette fonction me permet de verifier si le LABEL rescent search est visible
+				 *
+				 */
+			 	
+			 	public boolean isRecentSearch()
+			    {
+			 		isRecentSearch=false;
+					WebElement recentSearch = bc.getElementByXPath(strRecentSearch);
+						
+						
+						if(null != recentSearch)
+						{
+							isRecentSearch=true;
+							
+							System.out.println("RecentSearch OK");
+						}
+						else
+						{
+							System.out.println(" isRecentSearch KO ");
+						}
+						
+					
+					return isRecentSearch;
+				}
+		
+			 	
+			 	/**
+			 	 * Cette fonction me permet de verifier si la zone de recherche  est visible
+				 * 
+				 *
+				 */
+			 	
+			 	public boolean isZoneRecherche()
+			    {
+			 		isZoneRecherche=false;
+					WebElement zoneRecherche = bc.getElementByID(strZoneRecherche);
+						
+						
+						if(null != zoneRecherche)
+						{
+							isZoneRecherche=true;
+							
+							System.out.println("Accès Page Recherche OK");
+						}
+						else
+						{
+							System.out.println(" Accès page recherche KO ");
+						}
+						
+					
+					return isZoneRecherche;
+				}
+		
+			 	
+			 	/**
+			 	 * Cette fonction me permet de verifier si le bouton rechercher est visible depuis la homepage
+				 * 
+				 *
+				 */
+			 	
+			 	public boolean isBarreDeRechercheHP()
+			    {
+			    	isstrBarreDeRecherche=false;
+					WebElement barreRecherche = bc.getElementByXPath(strBarreDeRecherche);
+						
+						
+						if(null != barreRecherche)
+						{
+							isstrBarreDeRecherche=true;
+							
+							System.out.println("Affichge barre de recherche depuis HP OK");
+						}
+						else
+						{
+							System.out.println(" Affichge barre de recherche depuis HP OK KO ");
+						}
+						
+					
+					return isstrBarreDeRecherche;
+				}
+		
 			 	
 }
